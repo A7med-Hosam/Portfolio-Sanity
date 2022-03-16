@@ -1,0 +1,213 @@
+.app__navbar {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+
+    padding: 1rem 2rem;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.18);
+    position: fixed;
+    z-index: 2;
+    
+    .app__navbar-logo {
+    // div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 10%;
+        height: 10%;
+    
+        img{
+            width: 90px;
+            height: 20px;
+    
+            @media screen and ( min-width: 2000px ) {
+                width: 180px;
+                height: 40;
+            }
+        }
+    
+    }
+
+    // navbar titles (links)
+    .app__navbar-links {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        list-style: none;
+    
+        li {
+            margin: 0rem 1rem;
+            cursor: pointer;
+    
+            flex-direction: column;
+    
+            div {
+                width: 30px;
+                height: 1px;
+                background: transparent;
+                border-radius: 50%;
+    
+                margin-bottom: 5px;
+            }
+    
+            a {
+                color: var(--gray-color);
+                text-decoration: none;
+                flex-direction: column;
+    
+                text-transform: uppercase;
+                font-weight: 500;
+    
+                transition: all .3s ease-in-out;
+    
+            }
+            
+            &:hover {
+                a {
+                    color: var(--secondary-color);
+                    font-size: 1.2rem;
+                }
+                div{
+                    background: var(--secondary-color);
+                }
+            }
+        }
+    
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+.app__navbar-menu {
+    width: 30px;
+    height: 30px;
+    border-radius: 15%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-color);
+
+    svg {
+        width: 70%;
+        height: 70%;
+        color: var(--white-color);
+
+        cursor: pointer;
+    }
+
+    // the div contains ul list and icon close_menu
+    .app__navbar-menu-div {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
+
+        padding: 1rem;
+
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+
+        background: url('../../assets/bgWhite.png');
+        background-color: var(--white-color);
+        background-size: cover;
+        background-repeat: repeat;
+
+        box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
+
+        // HiX close_menu svg
+        svg{
+            width: 35px;
+            height: 35px;
+            color: var(--secondary-color);
+            margin: .5rem 1rem;
+        }
+
+        // list contains site sections' links
+        .app__navbar-menu-ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+
+            li{
+                display: flex;
+                margin: 1rem;
+                flex-direction: column;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                list-style: none;
+                
+                a{
+                    color: var(--gray-color);
+                    text-decoration: none;
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    
+                    transition: all .3s ease-in-out;
+                    
+                    &:hover{
+                        color: var(--secondary-color);
+                    }
+                }
+                
+                div {
+                    width: 45px;
+                    height: 1px;
+                    background: transparent;
+                    border-radius: 100%;
+    
+                    margin-bottom: 5px;
+                }
+
+                &:hover{
+                    a{
+                        font-size: 1.2rem;
+                    }
+                    // div {
+                    //     width: 50px;
+                    //     background: var(--secondary-color);
+                    // }
+                    
+                }
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            display: none;
+            
+        }
+    }
+    @media screen and (min-width: 900px) {
+        display: none;
+        
+    }
+}
